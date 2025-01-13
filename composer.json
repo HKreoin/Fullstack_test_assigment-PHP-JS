@@ -1,0 +1,20 @@
+{
+  "name": "kreoin/fsapp",
+  "description": "Test assigment fo fullstack PHP JS",
+  "type": "project",
+  "autoload": {
+    "psr-4": {
+      "Kreoin\\FSApp\\": "src/"
+    },
+    "files": [
+      "config.php"
+    ]
+  },
+  "authors": [
+    {
+      "name": "Kreoin",
+      "email": "khabdev@yandex.ru"
+    }
+  ],
+  "require": {}
+}
