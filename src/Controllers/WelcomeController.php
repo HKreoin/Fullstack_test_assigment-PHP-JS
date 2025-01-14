@@ -1,6 +1,6 @@
 <?php
 
-namespace Kreoin\FSApp;
+namespace App\Controllers;
 
 
 class WelcomeController

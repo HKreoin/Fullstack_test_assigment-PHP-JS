@@ -8,11 +8,13 @@ if (file_exists($autoloadPath1)) {
     require_once $autoloadPath2;
 }
 
-use const Kreoin\FSApp\DB;
-use Kreoin\FSApp\CarRepository;
-use Kreoin\FSApp\CarController;
-use Kreoin\FSApp\WelcomeController;
-use Kreoin\FSApp\Router;
+use App\Controllers\CarController;
+use App\Controllers\WelcomeController;
+use App\CarRepository;
+use App\Router;
+use PDO;
+
+use const App\DB;
 
 $conn = new PDO(DB);
 $conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
@@ -21,9 +23,14 @@ $initSql = file_get_contents($initFilePath);
 $conn->exec($initSql);
 
 $carRepository = new CarRepository($conn);
+
 $carController = new CarController($carRepository);
 $welcomeController = new WelcomeController();
+
 $router = new Router();
 $router->addRoute('GET', '/cars', $carController, 'index');
 $router->addRoute('GET', '/', $welcomeController, 'index');
-echo $router->route($_SERVER['REQUEST_METHOD'], $_SERVER['PATH_INFO']);
+
+$req = $_SERVER['REQUEST_METHOD'];
+$path = $_SERVER['REQUEST_URI'];
+echo $router->route($req, $path);

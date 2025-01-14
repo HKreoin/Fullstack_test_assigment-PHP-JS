@@ -1,8 +1,8 @@
 <?php
 
-namespace Kreoin\FSApp;
+namespace App\Controllers;
 
-use Kreoin\FSApp\CarRepository;
+use App\CarRepository;
 
 class CarController
 {
@@ -16,7 +16,6 @@ class CarController
     public function index()
     {
         $cars = $this->carRepository->getAllCars();
-
         return json_encode($cars);
     }
 }
