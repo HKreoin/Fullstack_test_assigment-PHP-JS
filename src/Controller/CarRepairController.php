@@ -17,6 +17,7 @@ class CarRepairController implements Controller
     {
         $carBrands = $this->repository->getAll();
         header('Content-Type: application/json');
+        header('Access-Control-Allow-Origin: *');
         return json_encode($carBrands);
     }
 }
