@@ -15,7 +15,7 @@ class CarRepairRepository implements Repository
 
     public function getAll()
     {
-        $stmt = $this->pdo->query('SELECT * FROM car_brands');
+        $stmt = $this->pdo->query('SELECT * FROM car_repairs');
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 }
