@@ -9,20 +9,21 @@ if (file_exists($autoloadPath1)) {
 }
 
 use const Kreoin\FSApp\DB;
+use Kreoin\FSApp\CarRepository;
+use Kreoin\FSApp\CarController;
+use Kreoin\FSApp\WelcomeController;
+use Kreoin\FSApp\Router;
 
 $conn = new PDO(DB);
 $conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-
 $initFilePath = implode('/', [dirname(__DIR__), 'database/init.sql']);
-
 $initSql = file_get_contents($initFilePath);
-
 $conn->exec($initSql);
 
-$query = 'SELECT * FROM cars';
-
-$stmt = $conn->query($query);
-
-while ($row = $stmt->fetch()) {
-    echo json_encode($row) . PHP_EOL;
-}
+$carRepository = new CarRepository($conn);
+$carController = new CarController($carRepository);
+$welcomeController = new WelcomeController();
+$router = new Router();
+$router->addRoute('GET', '/cars', $carController, 'index');
+$router->addRoute('GET', '/', $welcomeController, 'index');
+echo $router->route($_SERVER['REQUEST_METHOD'], $_SERVER['PATH_INFO']);
