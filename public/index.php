@@ -22,7 +22,13 @@ use App\Controller\WelcomeController;
 use App\Controller\CarBrandController;
 use App\Controller\CarRepairController;
 
-$conn = new PDO(DB);
+
+try {
+    $conn = new PDO(DB);
+} catch (PDOException $e) {
+    exit('Connection failed: ' . $e->getMessage());
+}
+
 $conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 $initFilePath = implode('/', [dirname(__DIR__), 'database/init.sql']);
 $initSql = file_get_contents($initFilePath);
@@ -41,8 +47,8 @@ $carRepairController = new CarRepairController($carRepairRepository);
 $router = new Router();
 $router->addRoute('GET', '/', $welcomeController, 'index');
 $router->addRoute('GET', '/cars', $carController, 'index');
-$router->addRoute('GET', '/car-brands', $carBrandController, 'index');
-$router->addRoute('GET', '/car-repairs', $carRepairController, 'index');
+$router->addRoute('GET', '/cars/brands', $carBrandController, 'index');
+$router->addRoute('GET', '/cars/repairs', $carRepairController, 'index');
 
 $req = $_SERVER['REQUEST_METHOD'];
 $path = $_SERVER['REQUEST_URI'];
