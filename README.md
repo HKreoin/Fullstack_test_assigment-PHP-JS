@@ -1,6 +1,6 @@
 # Fullstack_test_assigment-PHP-JS
 
-## Тестовое задание
+## Тестовое задание часть 1
 
 Инициализация БД в файле database/init.sql
 
@@ -33,4 +33,24 @@ JOIN car_repairs cr
     ON c.id = cr.car_id
     WHERE (c.end_date IS NULL)
     AND cr.cost > 1000;
+```
+
+## Тестовое задание часть 2
+
+### Запуск проекта по адресу localhost:3000
+
+```
+make run
+```
+
+### Запуск бэкенда
+
+```
+make run-backend
+```
+
+### Запуск фронтенда
+
+```
+make run-frontend
 ```
