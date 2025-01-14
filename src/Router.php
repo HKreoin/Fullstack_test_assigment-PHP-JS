@@ -2,6 +2,8 @@
 
 namespace App;
 
+use App\Controller\Controller;
+
 class Router
 {
     private $routes;
@@ -11,7 +13,7 @@ class Router
         $this->routes = [];
     }
 
-    public function addRoute($method, $path, $controller, $action)
+    public function addRoute(string $method, string  $path, Controller $controller, string $action)
     {
         $this->routes[] = [
             'method' => $method,
@@ -29,6 +31,7 @@ class Router
                 return $controller->{$route['action']}();
             }
         }
+        header('HTTP/1.1 404 Not Found');
         return '404';
     }
 }
