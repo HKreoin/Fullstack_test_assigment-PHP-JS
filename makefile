@@ -1,8 +1,8 @@
 run:
-	php -S localhost:8081 -t backend/public & npx serve frontend/public/
+	php -S localhost:8081 -t backend/public & npx serve public_html/
 
 run-backend:
 	php -S localhost:8081 -t backend/public
 
 run-frontend:
-	npx serve frontend/public
+	npx serve public_html/
