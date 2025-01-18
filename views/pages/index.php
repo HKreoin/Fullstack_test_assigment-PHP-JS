@@ -1,30 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Car managment</title>
-  <link href="assets/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
-  <script type="module" src="/assets/js/global.js" defer></script>
-</head>
+<?php
+require_once __DIR__ . '/components/head.php';
+?>
 
 <body>
-  <header class="container-fluid">
-    <div class="container fluid p-3 mb-2 bg-primary text-white text-center">
-      <div class="row">
-        <div class="col-4">
-          <h3>Fullstack test assigment</h3>
-        </div>
-        <nav class="col-8">
-          <ul class="nav">
-            <li class="nav-item"><a href="#" class="nav-link active text-white">Home page</a></li>
-          </ul>
-        </nav>
-      </div>
 
-  </header>
+  <?php require_once __DIR__ . '/components/navbar.php'; ?>
 
   <h2 class="text-center">All cars</h2>
 
@@ -75,12 +55,8 @@
       <tbody id="car-repairs">
       </tbody>
     </table>
-
   </div>
 
-  <script src="assets/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
 </body>
 
 </html>
