@@ -27,6 +27,6 @@ class Router
             }
         }
         header('HTTP/1.1 404 Not Found');
-        return '404 | Not Found';
+        require_once __DIR__ . '/../views/pages/errors/404.php';
     }
 }
