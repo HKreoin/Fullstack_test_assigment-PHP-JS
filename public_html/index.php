@@ -7,13 +7,18 @@ if (file_exists($autoloadPath1)) {
 } else {
     require_once $autoloadPath2;
 }
+require_once __DIR__ . '/../database/config.php';
 
 use App\Router;
 
 $conn = null;
 
+$dsn = DRIVER === 'sqlite'
+    ? DRIVER . ':' . DB_NAME
+    : DRIVER . ':host=' . HOST . ';dbname=' . DB_NAME . ";charset=" . CHARSET;
+
 try {
-    $conn = new PDO(DB);
+    $conn = new PDO($dsn, USER, PASS);
 } catch (PDOException $e) {
     exit('Connection failed: ' . $e->getMessage());
 }
