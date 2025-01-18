@@ -24,7 +24,7 @@ try {
 }
 
 $conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-$initFilePath = implode('/', [dirname(__DIR__), 'database/init.sql']);
+$initFilePath = implode('/', [dirname(__DIR__), 'database/init_' . DRIVER . '.sql']);
 $initSql = file_get_contents($initFilePath);
 $conn->exec($initSql);
 
