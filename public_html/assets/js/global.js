@@ -28,6 +28,7 @@ const getCars = async () =>
 const cars = await getCars();
 
 const drawCarsTable = (cars) => {
+  if (!document.getElementById("cars")) return;
   const table = document.getElementById("cars");
   cars.forEach((car) => {
     const row = document.createElement("tr");
@@ -49,13 +50,14 @@ const filterCarsByEndDate = (cars, endDate) => {
     (car) => new Date(car.end_date) < new Date(endDate) && car.end_date !== null
   );
 };
-
-document.getElementById("filter-btn").addEventListener("click", () => {
-  const endDate = document.getElementById("end-date").value;
-  const filteredCars = filterCarsByEndDate(cars, endDate);
-  document.getElementById("cars").innerHTML = ""; // Clear existing rows
-  drawCarsTable(filteredCars);
-});
+if (document.getElementById("filter-btn")) {
+  document.getElementById("filter-btn").addEventListener("click", () => {
+    const endDate = document.getElementById("end-date").value;
+    const filteredCars = filterCarsByEndDate(cars, endDate);
+    document.getElementById("cars").innerHTML = ""; // Clear existing rows
+    drawCarsTable(filteredCars);
+  });
+}
 
 drawCarsTable(cars);
 
@@ -70,7 +72,8 @@ const drawRepairsTable = (repairs) => {
             brand.id === cars.find((car) => car.id === repair.car_id).brand_id
         ).name
       }</td>
-      <td>${cars.find((car) => car.id === repair.car_id).model}</td>      
+      <td>${cars.find((car) => car.id === repair.car_id).model}</td>
+      <td>${cars.find((car) => car.id === repair.car_id).body_type}</td>    
       <td>${repair.repair_type}</td>
       <td>${repair.cost}</td>
       <td>${cars.find((car) => car.id === repair.car_id).end_date}</td> 
