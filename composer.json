@@ -7,7 +7,7 @@
       "App\\": "src/"
     },
     "files": [
-      "config.php"
+      "database/config.php"
     ]
   },
   "authors": [

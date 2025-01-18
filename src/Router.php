@@ -6,16 +6,11 @@ use App\Controller\Controller;
 
 class Router
 {
-    private $routes;
+    private static $routes = [];
 
-    public function __construct()
+    public static function addRoute(string $method, string  $path, Controller $controller, string $action)
     {
-        $this->routes = [];
-    }
-
-    public function addRoute(string $method, string  $path, Controller $controller, string $action)
-    {
-        $this->routes[] = [
+        self::$routes[] = [
             'method' => $method,
             'path' => $path,
             'controller' => $controller,
@@ -23,15 +18,15 @@ class Router
         ];
     }
 
-    public function route($method, $path)
+    public static  function route($method, $path)
     {
-        foreach ($this->routes as $route) {
+        foreach (self::$routes as $route) {
             if ($route['method'] === $method && $route['path'] === $path) {
                 $controller = $route['controller'];
                 return $controller->{$route['action']}();
             }
         }
         header('HTTP/1.1 404 Not Found');
-        return '404';
+        return '404 | Not Found';
     }
 }

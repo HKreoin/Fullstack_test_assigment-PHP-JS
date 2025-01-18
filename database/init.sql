@@ -27,8 +27,8 @@ INSERT INTO cars (brand_id, model, start_date, end_date, body_type, image) VALUE
 (2, 'Fusion', '2017-01-01', NULL, 'Sedan', 'fusion.jpg'),
 (3, 'Jetta', '2016-01-01', '2019-12-31', 'Sedan', 'jetta.jpg'),
 (1, 'RAV4', '2018-01-01', NULL, 'SUV', 'rav4.jpg'),
-(2, 'Escape', '2014-01-01', '2018.09.10', 'SUV', 'escape.jpg'),
-(3, 'Tiguan', '2012-01-01', '2017.05.10', 'SUV', 'tiguan.jpg');
+(2, 'Escape', '2014-01-01', '2018-09-10', 'SUV', 'escape.jpg'),
+(3, 'Tiguan', '2012-01-01', '2017-05-10', 'SUV', 'tiguan.jpg');
 
 CREATE TABLE car_repairs (
   id INTEGER PRIMARY KEY AUTOINCREMENT,

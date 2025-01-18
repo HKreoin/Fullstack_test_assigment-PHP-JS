@@ -9,6 +9,6 @@ class WelcomeController implements Controller
     public function __construct($repository = null) {}
     public function index()
     {
-        return '<h1>Welcome page</h1>';
+        require_once __DIR__ . '/../../views/pages/index.php';
     }
 }
