@@ -15,9 +15,10 @@ require_once __DIR__ . '/../components/head.php';
       </a>
 
       <ul class="nav nav-pills">
-        <li class="nav-item"><a href="/" class="nav-link active">Главная</a></li>
-        <li class="nav-item"><a href="/task1" class="nav-link">Задание №1</a></li>
-        <li class="nav-item"><a href="/task2" class="nav-link">Задание №2</a></li>
+        <li class="nav-item"><a href="/" class="nav-link">Главная</a></li>
+        <li class="nav-item"><a href="/tasks/1" class="nav-link">Задание №1</a></li>
+        <li class="nav-item"><a href="/tasks/2" class="nav-link">Задание №2</a></li>
+        <li class="nav-item"><a href="/tasks/3" class="nav-link">Задание №3</a></li>
       </ul>
     </header>
   </div>
@@ -25,7 +26,7 @@ require_once __DIR__ . '/../components/head.php';
   <div class="container">
     <div class="row">
       <div class="col">
-        <p>Ошибка 404 | Страница не найдена</p>
+        <p><?php echo$errorMessage ?></p>
       </div>
     </div>
   </div>
