@@ -8,7 +8,7 @@ class Router
 {
     private static $routes = [];
 
-    public static function addRoute(string $method, string  $path, Controller $controller, string $action)
+    public static function addRoute(string $method, string $path, Controller $controller, string $action)
     {
         self::$routes[] = [
             'method' => $method,
@@ -18,7 +18,7 @@ class Router
         ];
     }
 
-    public static  function route($method, $path)
+    public static function route($method, $path)
     {
         foreach (self::$routes as $route) {
             if ($route['method'] === $method && $route['path'] === $path) {

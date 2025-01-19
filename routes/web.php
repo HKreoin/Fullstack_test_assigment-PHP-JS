@@ -5,14 +5,11 @@ use App\Repository\CarRepository;
 use App\Repository\CarBrandRepository;
 use App\Repository\CarRepairRepository;
 use App\Repository\TaskRepository;
-
 use App\Controller\WelcomeController;
 use App\Controller\TaskController;
-
 use App\Controller\Api\CarController;
 use App\Controller\Api\CarBrandController;
 use App\Controller\Api\CarRepairController;
-
 use App\Database;
 
 $db = new Database($db_config);

@@ -11,7 +11,9 @@ class TaskController implements Controller
     {
         $this->repository = $repository;
     }
-    public function index() {}
+    public function index()
+    {
+    }
 
     public function task1()
     {

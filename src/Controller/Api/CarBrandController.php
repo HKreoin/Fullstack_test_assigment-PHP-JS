@@ -7,7 +7,6 @@ use App\Repository\Repository;
 
 class CarBrandController implements Controller
 {
-
     private $repository;
 
     public function __construct(Repository $repository)

@@ -3,12 +3,10 @@
 namespace App\Controller\Api;
 
 use App\Controller\Controller;
-
 use App\Repository\Repository;
 
 class CarRepairController implements Controller
 {
-
     private $repository;
 
     public function __construct(Repository $repository)
