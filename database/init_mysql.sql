@@ -23,12 +23,12 @@ CREATE TABLE cars (
 );
 
 INSERT INTO cars (brand_id, model, start_date, end_date, body_type, image) VALUES
-(1, 'Camry', '2014-01-01', '2016-12-31', 'Sedan', 'camry.jpg'),
-(1, 'RAV4', '2018-01-01', NULL, 'SUV', 'rav4.jpg'),
-(3, 'Tiguan', '2012-01-01', '2017-05-10', 'SUV', 'tiguan.jpg'),
-(2, 'Fusion', '2017-01-01', NULL, 'Sedan', 'fusion.jpg'),
-(3, 'Jetta', '2016-01-01', '2019-12-31', 'Sedan', 'jetta.jpg'),
-(2, 'Escape', '2014-01-01', '2018-09-10', 'SUV', 'escape.jpg');
+(1, 'Camry', '2014-01-01', '2016-12-31', 'Sedan', 'assets/img/camry.jpg'),
+(1, 'RAV4', '2018-01-01', NULL, 'SUV', 'assets/img/rav4.jpg'),
+(3, 'Tiguan', '2012-01-01', '2017-05-10', 'SUV', 'assets/img/tiguan.jpg'),
+(2, 'Fusion', '2017-01-01', NULL, 'Sedan', 'assets/img/fusion.jpg'),
+(3, 'Jetta', '2016-01-01', '2019-12-31', 'Sedan', 'assets/img/jetta.jpg'),
+(2, 'Escape', '2014-01-01', '2018-09-10', 'SUV', 'assets/img/escape.jpg');
 
 
 CREATE TABLE car_repairs (
