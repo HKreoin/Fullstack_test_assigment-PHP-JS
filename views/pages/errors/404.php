@@ -10,7 +10,7 @@ require_once __DIR__ . '/../components/head.php';
   <div class="container">
     <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
       <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-        <img height="60" src="assets/img/ams-logo.png" alt="ams logo">
+        <img height="60" src="/assets/img/ams-logo.png" alt="ams logo">
         <span class="fs-4 ms-3">Тестовое задание для AMS</span>
       </a>
 
@@ -26,7 +26,7 @@ require_once __DIR__ . '/../components/head.php';
   <div class="container">
     <div class="row">
       <div class="col">
-        <p><?php echo$errorMessage ?></p>
+        <p class="text-center fs-2 mt-5"><?php echo $errorMessage ?></p>
       </div>
     </div>
   </div>

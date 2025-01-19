@@ -15,6 +15,14 @@ class TaskController implements Controller
     public function index(string $id = null): void
     {
         $entities = $this->repository->getAll($id);
-        require_once __DIR__ . "/../../views/pages/tasks/{$id}.php";
+        if ($entities) {
+            require_once __DIR__ . "/../../views/pages/tasks/{$id}.php";
+        } else {
+            header('HTTP/1.1 404 Not Found');
+            $http = $_SERVER['HTTP_HOST'];
+            $uri = $_SERVER['REQUEST_URI'];
+            $errorMessage = '404 | Page "' . $http . $uri .'" not found';
+            require_once __DIR__ . "/../../views/pages/errors/404.php";
+        }
     }
 }

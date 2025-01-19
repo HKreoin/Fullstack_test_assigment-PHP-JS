@@ -35,7 +35,8 @@ class Router
             }
         }
         header('HTTP/1.1 404 Not Found');
-        $errorMessage = '404 | Page not found' . PHP_EOL . $path . PHP_EOL . $id;
+        $http = $_SERVER['HTTP_HOST'];
+        $errorMessage = '404 | Page "' . $http . $uri .'" not found';
         require_once __DIR__ . '/../views/pages/errors/404.php';
     }
 }
