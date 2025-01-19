@@ -23,7 +23,8 @@ class Router
         foreach (self::$routes as $route) {
             if ($route['method'] === $method && $route['path'] === $path) {
                 $controller = $route['controller'];
-                return $controller->{$route['action']}();
+                echo $controller->{$route['action']}();
+                return;
             }
         }
         header('HTTP/1.1 404 Not Found');
