@@ -30,12 +30,12 @@ require_once __DIR__ . '/../components/head.php';
             <thead>
                 <tr>
                     <th scope="col">id</th>
-                    <th scope="col">Brand</th>
-                    <th scope="col">Model</th>
-                    <th scope="col">Start date</th>
-                    <th scope="col">End date</th>
-                    <th scope="col">Body type</th>
-                    <th scope="col">Image</th>
+                    <th scope="col">Марка</th>
+                    <th scope="col">Модель</th>
+                    <th scope="col">Дата начала производства</th>
+                    <th scope="col">Дата снятия с производства</th>
+                    <th scope="col">Тип кузова</th>
+                    <th scope="col">Изображение</th>
                 </tr>
 
             </thead>
@@ -48,7 +48,7 @@ require_once __DIR__ . '/../components/head.php';
                         <td><?= $car['start_date'] ?></td>
                         <td><?= $car['end_date'] ?></td>
                         <td><?= $car['body_type'] ?></td>
-                        <td><img src="<?= $car['image'] ?>" alt="<?= $car['model'] ?>" width="100px"></td>
+                        <td><img src="/../<?= $car['image'] ?>" alt="<?= $car['model'] ?>" width="100px"></td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>

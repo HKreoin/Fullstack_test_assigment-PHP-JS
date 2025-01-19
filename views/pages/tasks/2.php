@@ -29,10 +29,10 @@ require_once __DIR__ . '/../components/head.php';
     <table class="table table-striped">
       <thead>
         <tr>
-          <th scope="col">Brand</th>
-          <th scope="col">Model</th>
-          <th scope="col">Repair Types</th>
-          <th scope="col">Cost</th>
+          <th scope="col">Марка</th>
+          <th scope="col">Модель</th>
+          <th scope="col">Наименование ремонта</th>
+          <th scope="col">Стоимость</th>
         </tr>
       </thead>
       <tbody id="car-repairs">
