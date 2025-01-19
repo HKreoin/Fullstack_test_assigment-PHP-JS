@@ -7,13 +7,13 @@ use App\Repository\Repository;
 
 class CarRepairController implements Controller
 {
-    private $repository;
+    private Repository $repository;
 
     public function __construct(Repository $repository)
     {
         $this->repository = $repository;
     }
-    public function index()
+    public function index(string $id = null): ?string
     {
         $carBrands = $this->repository->getAll();
         header('Content-Type: application/json');

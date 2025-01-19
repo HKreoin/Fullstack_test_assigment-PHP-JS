@@ -30,6 +30,4 @@ Router::addRoute('GET', '/', $welcomeController, 'index');
 Router::addRoute('GET', '/cars', $carController, 'index');
 Router::addRoute('GET', '/cars/brands', $carBrandController, 'index');
 Router::addRoute('GET', '/cars/repairs', $carRepairController, 'index');
-Router::addRoute('GET', '/tasks/1', $TaskController, 'task1');
-Router::addRoute('GET', '/tasks/2', $TaskController, 'task2');
-Router::addRoute('GET', '/tasks/3', $TaskController, 'task3');
+Router::addRoute('GET', '/tasks', $TaskController, 'index');

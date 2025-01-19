@@ -40,7 +40,7 @@ require_once __DIR__ . '/../components/head.php';
 
             </thead>
             <tbody id="cars_sorted">
-                <?php foreach ($sortedCars as $car) : ?>
+                <?php foreach ($entities as $car) : ?>
                     <tr>
                         <td><?= $car['id'] ?></td>
                         <td><?= $car['brand_name'] ?></td>

@@ -7,22 +7,16 @@ use App\Repository\Repository;
 
 class TaskRepository implements Repository
 {
-    private $pdo;
+    private PDO $pdo;
 
     public function __construct(PDO $pdo)
     {
         $this->pdo = $pdo;
     }
 
-    public function getAll()
+    public function getAll(string $id = null): array
     {
-        $stmt = $this->pdo->query('SELECT * FROM cars');
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
-    }
-
-    public function task1()
-    {
-        $query = <<<SQL
+        $query1 = <<<SQL
         SELECT
             cb.name AS brand_name,
             c.model,
@@ -33,13 +27,8 @@ class TaskRepository implements Repository
         WHERE c.end_date IS NOT NULL
         AND c.end_date < '2018-09-01';
         SQL;
-        $stmt = $this->pdo->query($query);
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
-    }
 
-    public function task2()
-    {
-        $query = <<<SQL
+        $query2 = <<<SQL
         SELECT
             cb.name AS brand_name,
             c.model,
@@ -53,13 +42,8 @@ class TaskRepository implements Repository
         WHERE (c.end_date IS NULL)
         AND cr.cost > 1000;
         SQL;
-        $stmt = $this->pdo->query($query);
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
-    }
 
-    public function task3()
-    {
-        $query = <<<SQL
+        $query3 = <<<SQL
         SELECT
             c.id,
             cb.name AS brand_name,
@@ -73,7 +57,14 @@ class TaskRepository implements Repository
         ON c.brand_id = cb.id
         ORDER BY c.body_type DESC;
         SQL;
-        $stmt = $this->pdo->query($query);
+
+        $queries = [
+            '1' => $query1,
+            '2' => $query2,
+            '3' => $query3,
+        ];
+
+        $stmt = $this->pdo->query($queries[$id]);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 }

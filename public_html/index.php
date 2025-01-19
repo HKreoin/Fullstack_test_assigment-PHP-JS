@@ -13,7 +13,7 @@ use App\Router;
 
 require_once __DIR__ . '/../routes/web.php';
 
-$req = $_SERVER['REQUEST_METHOD'];
-$path = explode('?', $_SERVER['REQUEST_URI'])[0];
-$query = explode('?', $_SERVER['REQUEST_URI'])[1];
-Router::route($req, $path);
+$method = $_SERVER['REQUEST_METHOD'];
+$uri= strtolower($_SERVER['REQUEST_URI']);
+
+Router::route($method, $uri);
