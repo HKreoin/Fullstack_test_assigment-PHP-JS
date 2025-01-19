@@ -39,7 +39,9 @@ const drawCarsTable = (cars) => {
       <td>${car.start_date}</td>
       <td>${car.end_date}</td>
       <td>${car.body_type}</td>
-      <td>${car.image}</td>
+      <td><img src="${BASE_URL}/${car.image}" alt="${
+      car.model
+    }" width="100px"></td>
     `;
     table.appendChild(row);
   });
