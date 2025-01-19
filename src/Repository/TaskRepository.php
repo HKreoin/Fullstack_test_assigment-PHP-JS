@@ -64,7 +64,11 @@ class TaskRepository implements Repository
             '3' => $query3,
         ];
 
+        if (!isset($queries[$id])) {
+            return [];
+        }
         $stmt = $this->pdo->query($queries[$id]);
+
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 }
