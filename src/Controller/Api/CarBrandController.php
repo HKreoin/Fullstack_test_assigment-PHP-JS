@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\Api;
 
+use App\Controller\Controller;
 use App\Repository\Repository;
 
-class CarRepairController implements Controller
+class CarBrandController implements Controller
 {
 
     private $repository;
