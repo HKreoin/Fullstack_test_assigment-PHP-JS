@@ -37,9 +37,9 @@ require_once __DIR__ . '/../components/head.php';
             <tbody id="cars">
                 <?php foreach ($entities as $car) : ?>
                     <tr>
-                        <td><?= $car['brand_name'] ?></td>
-                        <td><?= $car['model'] ?></td>
-                        <td><?= $car['end_date'] ?></td>
+                        <td><?= htmlspecialchars($car['brand_name']) ?></td>
+                        <td><?= htmlspecialchars($car['model']) ?></td>
+                        <td><?= htmlspecialchars($car['end_date']) ?></td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>

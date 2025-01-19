@@ -42,12 +42,12 @@ require_once __DIR__ . '/../components/head.php';
             <tbody id="cars_sorted">
                 <?php foreach ($entities as $car) : ?>
                     <tr>
-                        <td><?= $car['id'] ?></td>
-                        <td><?= $car['brand_name'] ?></td>
-                        <td><?= $car['model'] ?></td>
-                        <td><?= $car['start_date'] ?></td>
-                        <td><?= $car['end_date'] ?></td>
-                        <td><?= $car['body_type'] ?></td>
+                        <td><?= htmlspecialchars($car['id']) ?></td>
+                        <td><?= htmlspecialchars($car['brand_name']) ?></td>
+                        <td><?= htmlspecialchars($car['model']) ?></td>
+                        <td><?= htmlspecialchars($car['start_date']) ?></td>
+                        <td><?= htmlspecialchars($car['end_date']) ?></td>
+                        <td><?= htmlspecialchars($car['body_type']) ?></td>
                         <td><img src="/../<?= $car['image'] ?>" alt="<?= $car['model'] ?>" width="100px"></td>
                     </tr>
                 <?php endforeach; ?>

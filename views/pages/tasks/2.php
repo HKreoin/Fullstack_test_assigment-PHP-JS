@@ -38,10 +38,10 @@ require_once __DIR__ . '/../components/head.php';
       <tbody id="car-repairs">
         <?php foreach ($entities as $item) : ?>
           <tr>
-            <td><?= $item['brand_name'] ?></td>
-            <td><?= $item['model'] ?></td>
-            <td><?= $item['repair_type'] ?></td>
-            <td><?= $item['repair_cost'] ?></td>
+            <td><?= htmlspecialchars($item['brand_name']) ?></td>
+            <td><?= htmlspecialchars($item['model']) ?></td>
+            <td><?= htmlspecialchars($item['repair_type']) ?></td>
+            <td><?= htmlspecialchars($item['repair_cost']) ?></td>
           </tr>
         <?php endforeach; ?>
       </tbody>
