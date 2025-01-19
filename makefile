@@ -6,3 +6,6 @@ autoload:
 
 lint:
 	composer exec --verbose phpcs -- --standard=PSR12 src routes database
+
+phpstan:
+	vendor/bin/phpstan analyse src routes database
