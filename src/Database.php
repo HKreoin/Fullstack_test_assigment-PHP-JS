@@ -13,7 +13,7 @@ class Database
         $this->connect($config);
     }
 
-    public function connect($config)
+    public function connect(array $config): void
     {
         extract($config);
         $dsn = $driver === 'sqlite'
@@ -34,7 +34,7 @@ class Database
         $this->connection = $conn;
     }
 
-    public function getConnection()
+    public function getConnection(): PDO
     {
         return $this->connection;
     }
