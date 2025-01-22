@@ -55,7 +55,7 @@ class TaskRepository implements Repository
         FROM cars c
         JOIN car_brands cb
         ON c.brand_id = cb.id
-        ORDER BY c.body_type DESC;
+        ORDER BY c.body_type;
         SQL;
 
         $queries = [
